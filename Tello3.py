@@ -26,13 +26,14 @@ def recv():
             break
 
 #コマンドを受け取って実行する関数
-def control(sock, tello_address, command):
+def control(sock, address, com, dis):
     if 'end' in command:
         print ('-----')
         sock.close()  
         sys.exit()
         
     # Send data
+    command = com + " " + dis
     command = command.encode(encoding="utf-8") 
     sent = sock.sendto(command, tello_address)
             
@@ -60,15 +61,15 @@ control(sock, tello_address, 'command')
 time.sleep(5)
 control(sock, tello_address, 'takeoff')
 time.sleep(5)
-control(sock, tello_address, 'right 50')
+control(sock, tello_address, 'right', '50')
 time.sleep(5)
-control(sock, tello_address, 'forward 300')
+control(sock, tello_address, 'forward','300')
 time.sleep(5)
-control(sock, tello_address, 'left 70')
+control(sock, tello_address, 'left', '70')
 time.sleep(5)
-control(sock, tello_address, 'back 300')
+control(sock, tello_address, 'back', '300')
 time.sleep(5)
-control(sock, tello_address, 'right 25')
+control(sock, tello_address, 'right', '25')
 time.sleep(5)
 control(sock, tello_address, 'land')
 time.sleep(5)
