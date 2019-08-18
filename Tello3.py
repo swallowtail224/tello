@@ -27,7 +27,7 @@ def recv():
 
 #コマンドを受け取って実行する関数
 def control(sock, address, com, dis):
-    if 'end' in command:
+    if 'end' in com:
         print ('-----')
         sock.close()  
         sys.exit()
