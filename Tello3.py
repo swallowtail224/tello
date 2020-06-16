@@ -10,6 +10,8 @@ import socket
 import sys
 import time
 
+#test
+
 #受け取った返信をデコードして表示する関数
 def recv():
     count = 0
