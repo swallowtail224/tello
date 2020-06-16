@@ -75,3 +75,4 @@ control(sock, tello_address, 'land')
 time.sleep(5)
 control(sock, tello_address, 'end')
 
+#testes
